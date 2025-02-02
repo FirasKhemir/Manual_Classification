@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        img { max-width: 80%; max-height: 400px; margin-bottom: 20px; }
+        button { margin: 5px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Image Classifier</h1>
+    <img id="image" src="" alt="Image will appear here">
+    <div id="controls">
+        <button onclick="classify('one_year')">One Year</button>
+        <button onclick="classify('two_years')">Two Years</button>
+        <button onclick="classify('three_years')">Three Years</button>
+        <button onclick="classify('four_years')">Four Years</button>
+    </div>
+    <p id="status"></p>
+
+    <script>
+        async function fetchImage() {
+            const response = await fetch('/get_image');
+            const data = await response.json();
+
+            if (data.status === 'done') {
+                document.getElementById('status').textContent = data.message;
+                document.getElementById('controls').style.display = 'none';
+                document.getElementById('image').style.display = 'none';
+            } else {
+                document.getElementById('image').src = `/static/data/${data.image}`;
+                document.getElementById('image').alt = data.image;
+                document.getElementById('status').textContent = '';
+            }
+        }
+
+        async function classify(category) {
+            const image = document.getElementById('image').alt;
+            const response = await fetch('/classify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image, category }),
+            });
+
+            const data = await response.json();
+            if (data.status === 'success') {
+                fetchImage();
+            } else {
+                document.getElementById('status').textContent = data.message;
+            }
+        }
+
+        // Load the first image on page load
+        fetchImage();
+    </script>
+</body>
+</html>
