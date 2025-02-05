@@ -1,14 +1,12 @@
 import React from "react";
-import FileUpload from "./FileUpload";
+import ImageClassifier from "./ImageClassifier";
 
 function App() {
   return (
-    <center>
     <div className="App">
-      <h1>Manual Image classification</h1>
-      <FileUpload />
+      <h1 className="text-center p-4">Image Classification App</h1>
+      <ImageClassifier />
     </div>
-    </center>
   );
 }
 
