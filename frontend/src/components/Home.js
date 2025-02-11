@@ -32,7 +32,6 @@ function Home() {
           Next
         </button>
       )}
-    </div>
-  );
+    </div>);
 }
 export default Home;

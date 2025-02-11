@@ -2,9 +2,9 @@ import React from "react";
 
 function WelcomeMessage() {
   return (
-    <div className="text-center text-white font-inter mb-6">
-      <h1 className="text-2xl md:text-3xl font-light">Welcome to the</h1>
-      <h2 className="text-4xl md:text-5xl font-bold">Manual Classification App</h2>
+    <div className="absolute top-[30%] left-1/2 transform -translate-x-1/2 text-left w-3/4 max-w-lg">
+      <p className="text-2xl sm:text-4xl font-light">Welcome to the</p>
+      <p className="text-5xl sm:text-6xl font-bold">Manual Classification App</p>
     </div>
   );
 }
