@@ -19,7 +19,6 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white p-4">
-      <h1 className="text-2xl font-bold mb-4">Image Classification App</h1>
       <div
         {...getRootProps()}
         className="border-dashed border-4 border-white p-8 text-center cursor-pointer w-3/4 max-w-lg bg-blue-700 rounded-lg"
