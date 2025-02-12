@@ -1,3 +1,6 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
 body {
   margin: 0;
   font-family: 'Inter',Arial;
@@ -11,6 +14,16 @@ body {
   margin: 0;
 }
 
+
+#root{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -21,6 +34,14 @@ h1, h2, h3 {
   font-weight: 700; /* Bold */
 }
 
-p, button {
+p.small{
+  margin: 0%;
+  font-size: 20px;
+} 
+p.big{
+  margin-top: 1%;
+  font-size: 60px;
+} 
+button {
   font-weight: 400; /* Normal */
 }

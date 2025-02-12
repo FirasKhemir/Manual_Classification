@@ -1,0 +1,35 @@
+.mybutton {
+    background-color: #06173C; /* Custom background color */
+    border-radius: 50px; /* Rounded edges */
+    padding: 20px;
+    margin-top: 1%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    width: 70%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px black;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  p.buttonText{
+    margin: 0;
+    font-size: 35px;
+  }
+
+
+
+  .mybutton:hover {
+    background-color: #142a57; /* Darker shade on hover */
+  }
+  
+
+  .folder{
+    margin-top: 10px;
+    padding-left: 10px;
+    height: 30px;
+    width: auto;
+  }
